@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages - Strajk bowling
+name: Deploy to GitHub Pages - Strajk
 
 on:
   push:

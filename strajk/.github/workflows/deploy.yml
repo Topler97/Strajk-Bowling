@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages - Strajk-Bowling
+name: Deploy to GitHub Pages - strajk-Bowling
 
 on:
   push:

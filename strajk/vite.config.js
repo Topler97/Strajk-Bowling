@@ -1,22 +1,28 @@
-import { defineConfig } from "vitest/config";
+import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  test: {
-    environment: "jsdom",
-    globals: true,
-    setupFiles: "./src/setupTests.js",
-    transformMode: {
-      web: [/\.jsx?$/],
+  /* resolve: {
+    alias: {
+      'msw/browser': 'msw/browser.js',
     },
-    css: false,
+  }, */
+  test: {
+    globals: true,
+    environment: "jsdom",
+    setupFiles: "./testSetUp.js", // korrekt path
+    provider: "v8",
     coverage: {
-      provider: "c8",
-      reporter: ["text", "json", "html"],
-      threshold: {
-        global: 80,
-      },
+      reporter: ["text", "json", "lcov", "json-summary"],
+      all: true,
+      include: ["src/**/*.jsx"],
+      exclude: [
+        "node_modules",
+        "src/app.jsx",
+        "src/router.jsx",
+        "src/main.jsx",
+      ],
     },
   },
 });

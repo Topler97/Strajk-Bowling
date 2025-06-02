@@ -14,24 +14,25 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Steg 2: Sätt upp Node.js med caching
+      # Steg 2: Sätt upp Node.js med caching från rätt undermapp
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: "npm"
+          cache-dependency-path: strajk/package-lock.json
 
-      # Steg 3: Installera beroenden
+      # Steg 3: Installera beroenden i undermappen
       - name: Install dependencies
         run: npm ci
         working-directory: strajk
 
-      # Steg 4: Bygga projektet
+      # Steg 4: Bygg projektet
       - name: Build project
         run: npm run build --if-present
         working-directory: strajk
 
-      # Steg 5: Köra tester
+      # Steg 5: Kör tester
       - name: Run tests
         run: npm test
         working-directory: strajk

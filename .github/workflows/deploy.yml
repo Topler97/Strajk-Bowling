@@ -1,0 +1,37 @@
+name: Deploy to GitHub Pages - strajk-Bowling
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Steg 1: Hämta koden
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Steg 2: Sätt upp Node.js med caching
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: "npm"
+
+      # Steg 3: Installera beroenden
+      - name: Install dependencies
+        run: npm ci
+        working-directory: strajk
+
+      # Steg 4: Bygga projektet
+      - name: Build project
+        run: npm run build --if-present
+        working-directory: strajk
+
+      # Steg 5: Köra tester
+      - name: Run tests
+        run: npm test
+        working-directory: strajk

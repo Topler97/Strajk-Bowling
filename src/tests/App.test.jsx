@@ -1,5 +1,5 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import Booking from "../views/Booking";
+import Booking from "../views/Book";
 import { MemoryRouter } from "react-router-dom";
 
 test("should send a booking successfully when form is filled and button is clicked", async () => {

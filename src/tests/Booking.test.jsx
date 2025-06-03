@@ -1,10 +1,10 @@
 import React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { it, describe, expect } from 'vitest';
-import Booking from '../views/Booking';
+import Booking from '../views/Book';
 import { MemoryRouter } from 'react-router-dom';
 import '@testing-library/jest-dom';
-import BookingInfo from '../components/BookingInfo/BookingInfo';
+import BookingInfo from '../components/Booking/Booking';
 import { vi } from 'vitest';
 import Confirmation from '../views/Confirmation';
 

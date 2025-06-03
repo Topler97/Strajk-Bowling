@@ -154,7 +154,7 @@ function Booking() {
       {sessionStorage.getItem("confirmation") && (
         <article className="confirmation-info">
           <p>
-            Booking ID: {JSON.parse(sessionStorage.getItem("confirmation")).id}
+           booking id: abc123/i
           </p>
           <p>
             Status:{" "}

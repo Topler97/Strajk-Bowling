@@ -148,7 +148,7 @@ function Booking() {
         shoes={shoes}
       />
       <button className="button booking__button" onClick={book}>
-        Slutför bokning
+      strIIIIIike!
       </button>
       {error ? <ErrorMessage message={error} /> : ""}
     </section>

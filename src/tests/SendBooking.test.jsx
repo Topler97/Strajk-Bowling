@@ -1,7 +1,7 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import Booking from "../views/Book";
-import { server } from "../mocks/server";
+import { server } from "../mockData/server";
 import { rest } from "msw";
 
 // Mocka POST-anropet

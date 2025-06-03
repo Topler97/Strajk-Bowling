@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import Booking from './views/Booking';
+import Booking from './views/Book';
 import Confirmation from './views/Confirmation';
 
 const router = createBrowserRouter([

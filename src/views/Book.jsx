@@ -151,6 +151,19 @@ function Booking() {
       strIIIIIike!
       </button>
       {error ? <ErrorMessage message={error} /> : ""}
+      {sessionStorage.getItem("confirmation") && (
+        <article className="confirmation-info">
+          <p>
+            Booking ID: {JSON.parse(sessionStorage.getItem("confirmation")).id}
+          </p>
+          <p>
+            Status:{" "}
+            {JSON.parse(sessionStorage.getItem("confirmation")).active
+              ? "active"
+              : "inactive"}
+          </p>
+        </article>
+      )}
     </section>
   );
 }
